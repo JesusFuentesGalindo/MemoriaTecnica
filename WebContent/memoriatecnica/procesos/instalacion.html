@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<header>
+			<h1>Proceso de instalación</h1>
+		</header>
+		<p>El proceso de instalación que a continuación se describe está relacionado al sistema operativo <a href="https://www.debian.org/index.en.html">Debian 9</a> y se realiza a través de los repositorios del mismo, para poder instalar CACTI en otro sistema por favor consulta <a href="https://www.cacti.net/downloads/docs/html/index.html">el manual de CACTI</a>
+		</p>
+		<hr />
+		<h2>Requerimientos</h2>
+		<p>CACTI requiere que el siguiente software este instalado en el sistema:<br />
+			<ul>
+				<li>RRDTool 1.0.49 o mayor, 1.4+ recomendado</li>
+				<li>MySQL 5.x o mayor</li>
+				<li>PHP 5.1 o mayor</li>
+				<li>Servidor Web que soporte PHP e.g. Apache</li>
+			</ul>
+		</p>
+		<h2>Instalación</h2>
+		<h3>Instalación de MySQL</h3>
+		<p>La versión de MySQL que viene por omisión en los repositorios de Debian 9 es la 5.5, si deseas instalar una versión más reciente consulta <a href="https://dev.mysql.com/doc/mysql-apt-repo-quick-guide/en/">la guía rápida de uso del repositorio apt MySQL</a>
+		</p>
+		<p>Para instalar MySQL en tu sistema:
+			<ol>
+				<li>Abre una terminal y accede como root<br />
+					<figure><img src="img/inicioroot.png" /></figure>
+				</li>
+				<li>Ingresa el comando apt-get install mysql-server en la terminal<br />
+					<figure><img src="img/instalarmysql.png" /></figure>
+				</li>
+			</ol>
+		</p>
+		
+	</body>
+</html>
