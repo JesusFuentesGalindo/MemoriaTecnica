@@ -14,19 +14,34 @@
 			<h1 style="text-align:center;">Detalle de la Memoria Técnica</h1>
 			<p><span class="negrita">Objetivo:</span> Recolectar datos relacionados con el rendimiento del servicio que el cliente tiene contratado
 			y presentar al cliente dichos datos de manera vizual (gráficas) para su proceso de supervisión del servicio contratado.</p>
+			
 			<h2>Servidor</h2>
 			<p>Para poner en linea el servicio de monitoreo, se procedio con el montaje y configuración de un servidor con las caracteristicas necesarias
 			 a nivel hardware que permiten soportar el trafico de red necesario para el flujo de información relacionada con el circuito del cliente y 
 			 poder mantener la seguridad de dichos datos.</p>
+			 
 			 <h2>Red</h2>
-			 <p></p>
+			 <p>Descripción...</p>
+			 
 			 <h2>Software</h2>
-			 <p>Se optó por la instalación del sistema operativo <a href="https://www.debian.org/index.es.html">Debian</a> debido a que "justificar la decisión".</p> 
+			 <p>Se optó por la instalación del sistema operativo <a href="https://www.debian.org/index.es.html" target="blanck">Debian</a> debido a que es un sistema operativo robusto y de facil uso
+			 basado en el kernel de <a href="https://es.wikipedia.org/wiki/GNU/Linux" target="blanck">Linux</a>. <a href="https://www.debian.org/index.es.html" target="blanck">Debian</a> 
+			 es más que solo un sistema operativo, es un proyecto formado por miles de progrmadores profesionales por todo el mundo, lo que se resume en una comunidad que brinda soporte técnico a través de foros, wikis, entre otros. 
+			 <a href="https://www.debian.org/index.es.html" target="blankc">Debian</a> es open source, lo que significa que no hay necesidad de pagar por licencias de uso y 
+			 que se tiene completo acceso al codigo fuente, esto permite adaptar el sistema a las necesidades particulares de la organización. <a href="https://www.debian.org/index.es.html" target="blanck">Debian</a>
+			 se dapta a las necesidades de seguridad, robustez, soporte y fiabilidad que se necesitan para poder implementar el <span class="negrita">servicio de monitoreo de circuitos</span>.</p> 
 			 <p>Para la consulta de la información concerniente al circuito, por parte del cliente, se optó por la instalación del servidor Web 
-			 <a href="https://httpd.apache.org/">Apache</a> debido a que "justificar decisión"</p>
-			 <p>Para el almacenamiento de los datos se optó por <a href="https://www.mysql.com/">MySQL</a> debido a que "justificar decisión"</p>
+			 <a href="https://httpd.apache.org/">Apache</a> debido a que es un servidor seguro, eficiente y extensible que proporcione servicios HTTP en sincronización con los estándares HTTP actuales. Debido a esto
+			 <a href="https://httpd.apache.org/">Apache</a> se adapta a las necesidades requeridas para poder ofrecer una arquitectura cliente-servidor basada en web para la interacción del cliente final
+			 con el <span class="negrita">servicio de monitoreo de circuitos</span>.</p>
+			 <p>Para el almacenamiento de los datos se optó por <a href="https://www.mysql.com/" target="blanck">MySQL</a> debido a que es una base de datos robusta y confiable bajo el amparo de <a href="">Oracle</a> e implemente las 
+			 características <a href="https://es.wikipedia.org/wiki/ACID" target="blanck">ACID</a> lo cual ayuda a mantener la consistencia y seguridad de los datos. Estó es vital para almacenar los datos relacionados al 
+			 <span class="negrita">servicio de monitoreo de circuitos</span>.</p>
+			 
 			 <h2>Herramienta</h2>
-			 <p>El proceso de monitoreo esta a cargo de CACTI un programa que permite consultar......</p>
+			 <p>El proceso de monitoreo esta a cargo de CACTI un programa open source escrito en PHP y JavaScript, que permite obtener información de un equipo a través de snmp para despues poder almacenar dicha información en la base de datos
+			 y así poder generar todo tipo de indicadores que pueden ser consultados a través de la Web en forma de gŕaficas. Cumpliendo con esto con las necesidades del <span class="negrita">servicio de monitoreo de circuitos</span></p>
+			 
 			 <h2>Negocio</h2>
 			 <p>Descripción...</p>
 			 

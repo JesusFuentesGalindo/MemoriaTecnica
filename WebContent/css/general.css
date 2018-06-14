@@ -8,6 +8,7 @@
 #principal{
 	/*border: 1px solid blue;*/
 	
+	position: relative;
 	width: 100%;
 	height: 100%;
 }
@@ -81,3 +82,74 @@
 p{
 	text-align: justify;
 }
+
+/*****************************
+*		Media queris         *
+*****************************/
+
+@media only screen and (min-width: 360px) and (max-width: 600px){
+
+        #cabecera figure, h1, nav{
+                display: block;
+
+                padding: 0px 0px;
+                margin: 0px 10px;
+                text-align:center;
+        }
+         
+        #cabecera figure img{
+                width: 50%;
+                margin: 5px auto;
+                padding: auto auto;
+        }
+         
+        #cabecera h1{
+                position: static;
+                width: 100%;
+                margin: 5px;
+        }
+         
+        #cabecera nav{
+                position: static;
+
+                margin: 5px;
+                text-align: center;
+        }
+         
+        #cabecera nav ul li{
+
+                font-size:15px;
+        
+        }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 940px){
+
+        #cabecera figure, h1, nav{
+                display: block;
+
+                padding: 0px 0px;
+                margin: 0px 10px;
+                text-align:center;
+        }
+         
+        #cabecera figure img{
+                width: 50%;  
+                margin: 5px auto;
+                padding: auto auto;
+        }
+         
+        #cabecera h1{
+                position: static;
+                width: 100%;
+                margin: 5px;
+        }
+
+        #cabecera nav{
+l
+
+
+
+
+
+
