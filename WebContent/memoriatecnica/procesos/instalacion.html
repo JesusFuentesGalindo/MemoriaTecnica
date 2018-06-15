@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../../css/procesos.css" />
 		<title>Insert title here</title>
 	</head>
 	<body>
@@ -12,28 +13,37 @@
 		</p>
 		<hr />
 		<h2>Requerimientos</h2>
-		<p>CACTI requiere que el siguiente software este instalado en el sistema:<br />
+		<p>CACTI requiere que el siguiente software este instalado en el sistema:</p>
 			<ul>
 				<li>RRDTool 1.0.49 o mayor, 1.4+ recomendado</li>
 				<li>MySQL 5.x o mayor</li>
 				<li>PHP 5.1 o mayor</li>
 				<li>Servidor Web que soporte PHP e.g. Apache</li>
 			</ul>
-		</p>
+		
 		<h2>Instalación</h2>
 		<h3>Instalación de MySQL</h3>
 		<p>La versión de MySQL que viene por omisión en los repositorios de Debian 9 es la 5.5, si deseas instalar una versión más reciente consulta <a href="https://dev.mysql.com/doc/mysql-apt-repo-quick-guide/en/">la guía rápida de uso del repositorio apt MySQL</a>
 		</p>
-		<p>Para instalar MySQL en tu sistema:
+		<p>Para instalar MySQL en tu sistema:</p>
 			<ol>
 				<li>Abre una terminal y accede como root<br />
-					<figure><img src="img/inicioroot.png" /></figure>
+					<figure class="centrar"><img src="img/inicioroot.png" /></figure>
 				</li>
 				<li>Ingresa el comando apt-get install mysql-server en la terminal<br />
-					<figure><img src="img/instalarmysql.png" /></figure>
+					<figure class="centrar"><img src="img/instalarmysql.png" /></figure>
+				</li>
+				<li>Mientras la instalación se realiza, te solicitara una contraseña para el usuario root de MySQL
+					<figure class="centrar"><img src="img/mysql-pwd.png" /></figure>
+				</li>
+				<li>Te solicitara que reingreses la contraseña
+					<figure class="centrar"><img src="img/mysql-pwd2.png" /></figure>
+				</li>
+				<li>Despues de esto MySQL estara instalado. Para comprobar que MySQL ya se encuentra habilitado
+				escribe en la terminal <span>service mysql status</span> te debe aparecer en pantalla Active: active (running)
+					<figure class="centrar"><img src="img/statusMysql.png" /></figure>
 				</li>
 			</ol>
-		</p>
 		
 	</body>
 </html>
