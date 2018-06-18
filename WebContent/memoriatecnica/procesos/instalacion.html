@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="../../css/procesos.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/general.css" />
 		<title>Insert title here</title>
 	</head>
 	<body>
@@ -12,25 +13,32 @@
 		<p>El proceso de instalación que a continuación se describe está relacionado al sistema operativo <a href="https://www.debian.org/index.en.html">Debian 9</a> y se realiza a través de los repositorios del mismo, para poder instalar CACTI en otro sistema por favor consulta <a href="https://www.cacti.net/downloads/docs/html/index.html">el manual de CACTI</a>
 		</p>
 		<hr />
+		
 		<h2>Requerimientos</h2>
 		<p>CACTI requiere que el siguiente software este instalado en el sistema:</p>
-			<ul>
-				<li>RRDTool 1.0.49 o mayor, 1.4+ recomendado</li>
-				<li>MySQL 5.x o mayor</li>
-				<li>PHP 5.1 o mayor</li>
-				<li>Servidor Web que soporte PHP e.g. Apache</li>
-			</ul>
+		
+		<ul>
+			<li>RRDTool 1.0.49 o mayor, 1.4+ recomendado</li>
+			<li>MySQL 5.x o mayor</li>
+			<li>PHP 5.1 o mayor</li>
+			<li>Servidor Web que soporte PHP e.g. Apache</li>
+		</ul>
 		
 		<h2>Instalación</h2>
 		<h3>Instalación de MySQL</h3>
-		<p>La versión de MySQL que viene por omisión en los repositorios de Debian 9 es la 5.5, si deseas instalar una versión más reciente consulta <a href="https://dev.mysql.com/doc/mysql-apt-repo-quick-guide/en/">la guía rápida de uso del repositorio apt MySQL</a>
-		</p>
-		<p>Para instalar MySQL en tu sistema:</p>
+		<details>
+			<summary>Detalle de instalación</summary>
+			<p>La versión de MySQL que viene por omisión en los repositorios de Debian 9 es la 5.5, si deseas instalar
+			 una versión más reciente consulta <a href="https://dev.mysql.com/doc/mysql-apt-repo-quick-guide/en/">la guía rápida de uso del repositorio apt MySQL</a>
+			</p>
+			
+			<p>Para instalar MySQL en tu sistema:</p>
+			
 			<ol>
 				<li>Abre una terminal y accede como root<br />
 					<figure class="centrar"><img src="img/inicioroot.png" /></figure>
 				</li>
-				<li>Ingresa el comando apt-get install mysql-server en la terminal<br />
+				<li>Ingresa el comando <span class="negrita">apt-get install mysql-server</span> en la terminal<br />
 					<figure class="centrar"><img src="img/instalarmysql.png" /></figure>
 				</li>
 				<li>Mientras la instalación se realiza, te solicitara una contraseña para el usuario root de MySQL
@@ -40,10 +48,122 @@
 					<figure class="centrar"><img src="img/mysql-pwd2.png" /></figure>
 				</li>
 				<li>Despues de esto MySQL estara instalado. Para comprobar que MySQL ya se encuentra habilitado
-				escribe en la terminal <span>service mysql status</span> te debe aparecer en pantalla Active: active (running)
+				escribe en la terminal: <span class="negrita">service mysql status</span>. Si todo salio
+				bien en pantalla veras <span class="negrita">Active: active (running)</span>
 					<figure class="centrar"><img src="img/statusMysql.png" /></figure>
 				</li>
 			</ol>
+			
+			<p>Listo, MySQL ya se encuentra instalado</p>
+		</details>
+		
+		<h3>Instalación del servidor Web Apache</h3>
+		<details>
+			<summary>Detalle de instalación</summary>
+			<p>La versión de MySQL que viene por omisión en los repositorios de Debian 9 es la 2.4.25-3+deb9u4</p>
+			
+			<p>Para instalar Apache en tu sistema:</p>
+			
+			<ol>
+				<li>Abre una terminal y accede como root<br />
+					<figure class="centrar"><img src="img/inicioroot.png" /></figure>
+				</li>
+				<li>Ingresa el comando <span class="negrita">apt-get install apache2</span> en la terminal<br />
+					<figure class="centrar"><img src="img/instalarApache.png" /></figure>
+				</li>
+				<li>Espera a que el proceso de instalación se complete. Una vez terminado para comprobar que Apache
+					se encuentra instalado y habilitado ingresa en la terminal: <span class="negrita">service apache2 status</span>
+					Si todo salio bien en pantalla veras <span class="negrita">Active: active (running)</span>
+					<figure class="centrar"><img src="img/statusApache.png" /></figure>
+				</li>
+			</ol>
+			<p>Listo, Apache ha sido instalado</p>
+		</details>
+		
+		<h3>Instalación del modulo de programación PHP</h3>
+		<details>
+			<summary>Detalle de instalación</summary>
+			<p>La versión de PHP que viene por omisión en los repositorios de Debian 9 es la 5.0 o 7.0, para este caso
+			se instalo la versión 7.0</p>
+			
+			<p>Para instalar PHP en tu sistema: </p>
+			
+			<ol>
+				<li>Abre una terminal y accede como root<br />
+					<figure class="centrar"><img src="img/inicioroot.png" /></figure>
+				</li>
+				<li>Ingresa el comando <span class="negrita">apt-get install libapache2-mod-php7.0</span> en la terminal<br />
+					<figure class="centrar"><img src="img/instalarPhp.png" /></figure>
+				</li>
+				<li>Espera a que el proceso de instalación se complete. Una vez terminado para comprobar que PHP
+					se encuentra instalado y habilitado:
+					<ol>
+						<li>Crea un archivo de texto con tu editor favorito y escribe:<br />
+						<p>&lt;html&gt;<br />
+							&lt;body&gt;<br />
+							&lt;?php<br />
+							phpinfo();<br />
+							?&gt;<br />
+							&lt;/body&gt;<br />
+							&lt;/html&gt;
+						</p>
+						</li>
+						<li>
+							Guarda el archivo con la extensión <span class="negrita">.php</span> en el directorio 
+							<span class="negrita">/var/www/html/</span>
+						</li>
+						<li>
+							Abre tu explorador favorito y en la barra de direcciones ingresa <span>localhost/"nombreArchivo".php</span> 
+							si todo slaio bien veras una pantalla como la siguiente.
+							<figure class="centrar"><img src="img/phpinfo.png" /></figure>
+						</li>
+					</ol>
+				</li>
+			</ol>
+			<p>Listo, PHP ha sido instalado</p>
+		</details>
+		
+		<h3>Instalación de la herramienta CACTI</h3>
+		<details>
+			<summary>Detalle de instalación</summary>
+			<p>La versión de CACTI que viene por omisión en los repositorios de Debian 9 es la 0.8.8h+ds1-10</p>
+			
+			<p>Para instalar CACTI en tu sistema: </p>
+			
+			<ol>
+				<li>Abre una terminal y accede como root<br />
+					<figure class="centrar"><img src="img/inicioroot.png" /></figure>
+				</li>
+				<li>Ingresa el comando <span class="negrita">apt-get install cacti</span> en la terminal<br />
+					<figure class="centrar"><img src="img/instalarPhp.png" /></figure>
+				</li>
+				<li>Espera a que el proceso de instalación se complete. Una vez terminado para comprobar que PHP
+					se encuentra instalado y habilitado:
+					<ol>
+						<li>Crea un archivo de texto con tu editor favorito y escribe:<br />
+						<p>&lt;html&gt;<br />
+							&lt;body&gt;<br />
+							&lt;?php<br />
+							phpinfo();<br />
+							?&gt;<br />
+							&lt;/body&gt;<br />
+							&lt;/html&gt;
+						</p>
+						</li>
+						<li>
+							Guarda el archivo con la extensión <span class="negrita">.php</span> en el directorio 
+							<span class="negrita">/var/www/html/</span>
+						</li>
+						<li>
+							Abre tu explorador favorito y en la barra de direcciones ingresa <span>localhost/"nombreArchivo".php</span> 
+							si todo slaio bien veras una pantalla como la siguiente.
+							<figure class="centrar"><img src="img/phpinfo.png" /></figure>
+						</li>
+					</ol>
+				</li>
+			</ol>
+			<p>Listo, PHP ha sido instalado</p>
+		</details>
 		
 	</body>
 </html>
