@@ -135,34 +135,29 @@
 					<figure class="centrar"><img src="img/inicioroot.png" /></figure>
 				</li>
 				<li>Ingresa el comando <span class="negrita">apt-get install cacti</span> en la terminal<br />
-					<figure class="centrar"><img src="img/instalarPhp.png" /></figure>
+					<figure class="centrar"><img src="img/instalarCacti.png" /></figure>
 				</li>
-				<li>Espera a que el proceso de instalación se complete. Una vez terminado para comprobar que PHP
-					se encuentra instalado y habilitado:
-					<ol>
-						<li>Crea un archivo de texto con tu editor favorito y escribe:<br />
-						<p>&lt;html&gt;<br />
-							&lt;body&gt;<br />
-							&lt;?php<br />
-							phpinfo();<br />
-							?&gt;<br />
-							&lt;/body&gt;<br />
-							&lt;/html&gt;
-						</p>
-						</li>
-						<li>
-							Guarda el archivo con la extensión <span class="negrita">.php</span> en el directorio 
-							<span class="negrita">/var/www/html/</span>
-						</li>
-						<li>
-							Abre tu explorador favorito y en la barra de direcciones ingresa <span>localhost/"nombreArchivo".php</span> 
-							si todo slaio bien veras una pantalla como la siguiente.
-							<figure class="centrar"><img src="img/phpinfo.png" /></figure>
-						</li>
-					</ol>
+				<li>Seleccionamos el servidor HTTP que se instalo en el equipo, en nuestro caso Apache<br />
+					<figure class="centrar"><img src="img/ConfCacti1.png" /></figure>
+				</li>
+				<li>Utilizamos el programa de configuración de Debian para configurar la base de datos de CACTI, selecciona si y pulsa enter para continuar.
+					<figure class="centrar"><img src="img/confCacti2.png" /></figure>
+				</li>
+				<li>Ingresa la contraseña que se asignara al usuario de CACTI en la base de datos MySQL<br />
+					<figure class="centrar"><img src="img/confCacti3.png" /></figure>
+				</li>
+				<li>Ingrese de nuevo la contraseña para confirmar<br />
+					<figure class="centrar"><img src="img/confCacti4.png" /></figure>
+				</li>
+				<li>Ingrese la contraseña del usuario root de MySQL para que CACTI pueda crear la base de datos.<br />
+					<figure class="centrar"><img src="img/confCacti5.png" /></figure>
+				</li>
+				<li>Espera a que la instalación se complete, para validar que se instalo de forma correcta CACTI, difigete a el explorador de tu elección e
+				introduce en la barra de direcciones del navegador: <span class="negrita">localhost/cacti/</span> si la instalación fue exitosa te aparecera la página de login de CACTI.<br />
+					<figure class="centrar"><img src="img/confCacti6.png" /></figure>
 				</li>
 			</ol>
-			<p>Listo, PHP ha sido instalado</p>
+			<p>Listo, CACTI ha sido instalado</p>
 		</details>
 		
 	</body>
